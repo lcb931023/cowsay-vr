@@ -8,6 +8,7 @@ const app = createOrbitViewer({
   clearAlpha: 1,
   fov: 65,
   position: new THREE.Vector3(0, 0, 0), // camera
+  target: new THREE.Vector3(0, 0, -1), // default was (0, 0, 0). pass this so it can look ahead
 })
 
 const cow = new Cow()
@@ -16,7 +17,7 @@ app.scene.add(cow)
 window.addEventListener('keypress', handleKeyboard)
 function handleKeyboard (e) {
   if (e.key !== ' ') return
-  cow.check(app.camera)
+  cow.check()
 }
 
 app.on('tick', function(dt) {

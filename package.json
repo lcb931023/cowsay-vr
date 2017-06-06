@@ -1,13 +1,13 @@
 {
   "name": "cowsay",
   "version": "0.0.0",
-  "description": "Find the Invisible cow, in VR.",
+  "description": "Find the Invisible cow, in AR.",
   "main": "index.js",
   "scripts": {
     "start": "budo index.js:bundle.js --live -- -t babelify",
     "build": "browserify index.js -t babelify | uglifyjs -cm > bundle.js",
     "deploy": "npm run build && npm run deploy:upload",
-    "deploy:upload": "surge -d cowsay-vr.surge.sh"
+    "deploy:upload": "surge -d cowsay-ar.surge.sh"
   },
   "contributors": [
     "Changbai Li",
